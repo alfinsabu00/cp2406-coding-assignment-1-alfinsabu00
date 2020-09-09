@@ -1,3 +1,4 @@
+import a1.RainfallAnalyser;
 import org.junit.jupiter.api.*;
 import textio.TextIO;
 
@@ -33,7 +34,7 @@ class RainfallAnalyserTest {
     }
 
     @Test
-    void invalidFilename() {
+    void invalidFilename() throws IOException {
         TestHelper.updateSystemIn("resources/unknown.csv");
 
         RainfallAnalyser.main(null);
@@ -46,7 +47,7 @@ class RainfallAnalyserTest {
     }
 
     @Test
-    void emptyFile() {
+    void emptyFile() throws IOException {
         TestHelper.updateSystemIn("resources/empty.csv");
 
         RainfallAnalyser.main(null);
@@ -59,7 +60,7 @@ class RainfallAnalyserTest {
     }
 
     @Test
-    void rainyMonth() {
+    void rainyMonth() throws IOException {
         TestHelper.updateSystemIn("resources/rainy.csv");
 
         RainfallAnalyser.main(null);
@@ -86,7 +87,7 @@ class RainfallAnalyserTest {
     }
 
     @Test
-    void dryMonth() {
+    void dryMonth() throws IOException {
         TestHelper.updateSystemIn("resources/dry.csv");
 
         RainfallAnalyser.main(null);
@@ -113,7 +114,7 @@ class RainfallAnalyserTest {
     }
 
     @Test
-    void badYear() {
+    void badYear() throws IOException {
         TestHelper.updateSystemIn("resources/bad1.csv");
 
         RainfallAnalyser.main(null);
@@ -126,7 +127,7 @@ class RainfallAnalyserTest {
     }
 
     @Test
-    void badMonth() {
+    void badMonth() throws IOException {
         TestHelper.updateSystemIn("resources/bad2.csv");
 
         RainfallAnalyser.main(null);
@@ -139,7 +140,7 @@ class RainfallAnalyserTest {
     }
 
     @Test
-    void badDay() {
+    void badDay() throws IOException {
         TestHelper.updateSystemIn("resources/bad3.csv");
 
         RainfallAnalyser.main(null);
